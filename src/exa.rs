@@ -21,6 +21,13 @@ extern crate term_size;
 #[macro_use] extern crate lazy_static;
 #[macro_use] extern crate log;
 
+use std::io::{stderr, Write, Result as IOResult}; //verbatim original line
+use std::io::{Write, stderr, Result as IOResult}; //swapping order
+use std::io::{Stderr, Write, Result as IOResult}; //capitalizing name
+use std::io::stderr; //single import
+use std::io::{stderr, stderrLock}; //other struct that starts with 'std'
+use std::io::{stderr, stderrLock, stdin}; //third struct
+use std::io::{stdin, stderrLock, stderr}; //swapping order
 
 use std::env::var_os;
 use std::ffi::{OsStr, OsString};
